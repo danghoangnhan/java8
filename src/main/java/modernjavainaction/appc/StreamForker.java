@@ -37,7 +37,7 @@ public class StreamForker<T> {
 
         Map<Object, Future<?>> actions =
                 forks.entrySet().stream().reduce(
-                        new HashMap<Object, Future<?>>(),
+                        new HashMap<>(),
                         (map, e) -> {
                             map.put(e.getKey(),
                                     getOperationResult(queues, e.getValue()));
